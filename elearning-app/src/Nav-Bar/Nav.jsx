@@ -17,10 +17,10 @@ function Nav() {
           </Link>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <Link to="/my-classes" className="link">
+              <Link to="/my-classes" >
                 <li className="nav-item">My Classes</li>
               </Link>
-              <Link to="/browser" className="link">
+              <Link to="/browser" >
                 <li className="nav-item">Browser</li>
               </Link>
             </ul>

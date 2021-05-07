@@ -1,0 +1,42 @@
+.cat-page {
+    box-sizing: border-box;
+    
+  }
+  
+  
+  .ul-cat-list {
+    list-style-type: none;
+    padding:15px;
+    margin: 0;
+  }
+  
+  .ul-cat-list .li-cat-list {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+  }
+  .ul-cat-list .li-cat-list::after { 
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  
+  .li-cat-list:hover { 
+      background-color: #5cb85c;
+      color: white;
+  }
+  
+  .li-cat-list:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  } 
+  
+  .course-section { 
+    background: linear-gradient(
+      to top,
+      #DCDCDC, 
+      transparent
+    );
+  }
