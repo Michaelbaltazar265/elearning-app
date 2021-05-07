@@ -5,6 +5,8 @@ import React from 'react';
  import SignUp from './components/SignUp/SignUp';
  import ThankYou from './components/SignUp/ThankYou';
  import Login from './components/Login/Login';
+ import CategoryMain from './components/Category/CategoryMain';
+// import CateReact from './components/Category/CateReact';
 import './App.css';
 
 function App() {
@@ -17,8 +19,8 @@ function App() {
         <Route path='/signup' component={SignUp}/>
         <Route path='/thank-you' component={ThankYou}/>
        <Route path='/login' component={Login}/>
-     {/*  <Route path='/first' component={First}/>
-       <Route path='/sec' component={Sec}/> */}
+      <Route path='/browser' component={CategoryMain}/>
+       {/* <Route path='/react' component={CateReact}/> */}
     </Switch> 
     </div> 
 </Router>
