@@ -1,7 +1,14 @@
 import React from 'react'; 
 import './category.css';
 import CardList from './CardsList';
+import imagecss from './../../images/css.png';
+import imagejs from './../../images/js-page.png';
+import imageReact from './../../images/react-js-featured-image.jpeg';
+import imageHtml from './../../images/html-page.jpg';
 import './cards.css';
+import image from './../../images/learn-html-and-css-copy.png';
+
+
 
 class CategoryMain extends React.Component { 
   constructor(props){ 
@@ -56,7 +63,7 @@ if ( this.state.view === "main"){
       </div>
       <div className="col-8">
         <div className='col'>
-        <h2 className="text-center"> {view} </h2>
+        <img className='react-images ' src={imageReact} alt="javascript"/>
         </div>
         <CardList listView={this.state.view } />
       </div>
@@ -86,7 +93,7 @@ else if (view === 'HTML'){
       </div>
       <div className="col-8">
         <div className='col'>
-        <h2 className="text-center"> {view} </h2>
+        <img className='react-images ' src={imageHtml} alt="javascript"/>
         </div>
         <CardList listView={this.state.view }/>
       </div>
@@ -115,7 +122,7 @@ else if (view === 'JavaScript'){
       </div>
       <div className="col-8">
         <div className='col'>
-        <h2 className="text-center"> {view} </h2>
+        <img className='js-images' src={imagejs} alt="javascript"/>
         </div>
         <CardList listView={this.state.view }/>
       </div>
@@ -142,7 +149,7 @@ else if (view === 'CSS'){
       </div>
       <div className="col-8">
         <div className='col'>
-        <h2 className="text-center"> {view} </h2>
+        <img src={imagecss} alt='css-image' />
         </div>
         <CardList listView={this.state.view } />
       </div>
@@ -154,7 +161,7 @@ else if (view === 'CSS'){
     return ( 
 
       <>
-      <div className="row justify-content-start cat-page ">
+      <div className="row justify-content-start cat-page cat-first-page">
         <div className="col-4 cat-page-col  ">
           {/* <ListOfCategories/> */}
           <ul className="ul-cat-list">
@@ -168,7 +175,7 @@ else if (view === 'CSS'){
         </div>
         <div className="col-8">
           <div className='col'>
-          <h2 className="text-center"> Checkout our list and see what classes we have to offer </h2>
+            <img className='cat-main-img' src={image} alt=""/>
           </div>
         </div>
       </div>

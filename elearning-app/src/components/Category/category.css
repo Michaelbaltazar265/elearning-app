@@ -1,8 +1,18 @@
 .cat-page {
     box-sizing: border-box;
-    
+    background: linear-gradient(
+      to top,
+      #DCDCDC, 
+      transparent
+    );
   }
   
+  .cat-first-page { 
+    padding: 20px;
+  }
+  .cat-main-img { 
+    padding: 20px;
+  }
   
   .ul-cat-list {
     list-style-type: none;
@@ -39,4 +49,12 @@
       #DCDCDC, 
       transparent
     );
+  } 
+
+  .js-images { 
+    width: 700px;
+  }
+
+  .react-images  { 
+    width: 700px;
   }
