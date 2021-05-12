@@ -9,4 +9,6 @@ const info = {
     state: "", 
     zip: 0
 };
+
+
 export default info;

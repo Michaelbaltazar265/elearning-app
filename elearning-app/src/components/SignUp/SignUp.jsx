@@ -1,7 +1,9 @@
 import './signup.css';
 import React from 'react'; 
 import info from "./signInInfo";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
+
+
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -138,5 +140,9 @@ class SignUp extends React.Component {
 
 }
 }
+
+
+
+
 
 export default SignUp;

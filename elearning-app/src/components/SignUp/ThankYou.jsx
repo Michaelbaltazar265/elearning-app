@@ -1,5 +1,6 @@
 import React from 'react'; 
 import info from './signInInfo';
+import { Link } from "react-router-dom";
 
 const ThankYou = (props) => { 
 //    function handleLogin(e){ 
@@ -14,7 +15,9 @@ const ThankYou = (props) => {
                 `
                 }</h1>
                 <h3 className='text-center'>To login please click below</h3>
+                <Link to="/login">
                 <button className='btn btn-outline-success narbar-btn'>Login</button>
+                </Link>
             </div>
         </div>
     )

@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
+// import info from './../components/SignUp/signInInfo';
 
-function Nav() {
+
+function Nav(props) {
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,26 +45,6 @@ function Nav() {
                 Sign up
               </button>
             </Link>
-            <ul className="navbar-nav">
-              <Link to="/like" className='nav-links-2'>
-                <li className="nav-item">
-                  <img
-                    className="icon-nav"
-                    src="https://img.icons8.com/small/30/000000/like.png"
-                    alt='like'
-                  />
-                </li>
-              </Link>
-              <Link to="/shopping-cart" className='nav-links-2'>
-                <li className="nav-item">
-                  <img
-                    className="icon-nav"
-                    src="https://img.icons8.com/android/30/000000/shopping-cart-loaded.png"
-                    alt='shopping-cart'
-                  />
-                </li>
-              </Link>
-            </ul>
           </div>
         </div>
       </nav>
