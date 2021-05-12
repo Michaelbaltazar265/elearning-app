@@ -7,7 +7,6 @@ import cssCards from "./cssCards";
 
 /* Copy the map part    */
 const Cards = (props) => {
-  console.log(props.view);
   if (props.view === "React") {
     return reactCards.map((react) => (
       <div key={react.num} className="col card-col">
@@ -19,7 +18,7 @@ const Cards = (props) => {
               alt={react.class}
             />
             <div className="overlay">
-              <a href="#" className="icon">
+              <a href="#//" className="icon">
                 <img
                   src="https://img.icons8.com/flat-round/64/000000/play--v1.png"
                   alt="play-icon"
@@ -31,7 +30,7 @@ const Cards = (props) => {
             <h5 className="card-title">{react.class}</h5>
             <p className="card-text">{` by ${react.description}`}</p>
             <a
-              href="#"
+              href="#//"
               className="btn btn-outline-success"
             >{`Price ${react.hours}`}</a>
           </div>
@@ -49,7 +48,7 @@ const Cards = (props) => {
               alt={js.class}
             />
             <div className="overlay">
-              <a href="#" className="icon">
+              <a href="#//" className="icon">
                 <img
                   src="https://img.icons8.com/flat-round/64/000000/play--v1.png"
                   alt="play-icon"
@@ -61,7 +60,7 @@ const Cards = (props) => {
             <h5 className="card-title">{js.class}</h5>
             <p className="card-text">{` by ${js.description}`}</p>
             <a
-              href="#"
+              href="#//"
               className="btn btn-outline-success"
             >{`Price ${js.hours}`}</a>
           </div>
@@ -79,7 +78,7 @@ const Cards = (props) => {
               alt={h.class}
             />
             <div className="overlay">
-              <a href="#" className="icon">
+              <a href="#//" className="icon">
                 <img
                   src="https://img.icons8.com/flat-round/64/000000/play--v1.png"
                   alt="play-icon"
@@ -91,7 +90,7 @@ const Cards = (props) => {
             <h5 className="card-title">{h.class}</h5>
             <p className="card-text">{`by ${h.description}`}</p>
             <a
-              href="#"
+              href="#//"
               className="btn btn-outline-success"
             >{`Price ${h.hours}`}</a>
           </div>
@@ -109,7 +108,7 @@ const Cards = (props) => {
               alt={c.class}
             />
             <div className="overlay">
-              <a href="#" className="icon">
+              <a href="#//" className="icon">
                 <img
                   src="https://img.icons8.com/flat-round/64/000000/play--v1.png"
                   alt="play-icon"
@@ -121,7 +120,7 @@ const Cards = (props) => {
             <h5 className="card-title">{c.class}</h5>
             <p className="card-text">{` by ${c.description}`}</p>
             <a
-              href="#"
+              href="#//"
               className="btn btn-outline-success"
             >{`Price ${c.hours}`}</a>
           </div>

@@ -6,10 +6,10 @@ import React from 'react';
  import ThankYou from './components/SignUp/ThankYou';
  import Login from './components/Login/Login';
  import CategoryMain from './components/Category/CategoryMain';
-// import CateReact from './components/Category/CateReact';
+ import FeedBack from './components/Feedback/Feedback';
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <Router>
     <div>
@@ -20,7 +20,7 @@ function App() {
         <Route path='/thank-you' component={ThankYou}/>
        <Route path='/login' component={Login}/>
       <Route path='/browser' component={CategoryMain}/>
-       {/* <Route path='/react' component={CateReact}/> */}
+       <Route path='/feedback' component={FeedBack}/>
     </Switch> 
     </div> 
 </Router>

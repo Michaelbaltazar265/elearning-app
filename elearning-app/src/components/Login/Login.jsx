@@ -2,6 +2,7 @@ import React from "react";
 import info from "./../SignUp/signInInfo";
 import { Link } from "react-router-dom";
 import "./login.css";
+import yellow from './../../images/yellow-tape.jpeg'
 
 // let emailOutcome;
 // let pwOutcome;
@@ -15,20 +16,23 @@ class Login extends React.Component {
       emailOutcome: false,
       pwOutcome: false,
     };
-    // this.inputEmailLogin = this.inputEmailLogin.bind(this);
-    // this.inputPwLogin = this.inputPwLogin.bind(this);
-    // this.handleLogin = this.handleLogin.bind(this);
+    this.inputEmailLogin = this.inputEmailLogin.bind(this);
+    this.inputPwLogin = this.inputPwLogin.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
-  // inputEmailLogin (e){
-  //      emailOutcome = e.target.value === this.state.email ? true : false;
-  // }
-  // inputPwLogin (e){
-  //     pwOutcome = e.target.value === this.state.password ? true : false;
-  // }
+  inputEmailLogin (e){
+      //  emailOutcome = e.target.value === this.state.email ? true : false;
+      this.setState({ emailOutcome: e.target.value === this.state.email ? true : false})
+  }
+  inputPwLogin (e){
+      // pwOutcome = e.target.value === this.state.password ? true : false;
+      this.setState({ pwOutcome: e.target.value === this.state.email ? true : false})
+  }
 
-  // handleLogin(){
+  handleLogin(){ 
+    console.log("vmklsd")
 
-  // }
+  }
 
   render() {
     if (this.state.email === "" && this.state.password === "") {
@@ -36,6 +40,7 @@ class Login extends React.Component {
       return (
         <div className="container">
           <section>
+            <img src={yellow} alt=""/>
             <h1>
               We do not have your information at this time can you please sign
               up
