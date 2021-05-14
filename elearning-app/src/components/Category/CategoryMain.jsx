@@ -21,10 +21,11 @@ class CategoryMain extends React.Component {
 
   handleCateList = (e) => {
     const target = e.target.innerHTML;
+    console.log(target)
     this.setState({ view: target });
   };
 
-  render() {
+  render(props) {
     const view = this.state.view;
 
     if (this.state.view === "main") {
@@ -73,7 +74,6 @@ class CategoryMain extends React.Component {
         <>
           <div className="row justify-content-start cat-page ">
             <div className="col-4 cat-page-col  ">
-              {/* <ListOfCategories/> */}
               <ul className="ul-cat-list">
                 {this.state.categorieList.map((val) => (
                   <li
@@ -185,7 +185,6 @@ class CategoryMain extends React.Component {
       <>
         <div className="row justify-content-start cat-page cat-first-page">
           <div className="col-4 cat-page-col  ">
-            {/* <ListOfCategories/> */}
             <ul className="ul-cat-list">
               {this.state.categorieList.map((val) => (
                 <li
@@ -206,7 +205,8 @@ class CategoryMain extends React.Component {
           <div className="row">
               <div className="col-12">
                 <Link to="/feedback">
-                  <button type="button" className="btn btn-success feeback-cat">
+               
+                  <button type="button" className="btn btn-success feeback-cat" >
                     FeedBack
                   </button>
                 </Link>
@@ -216,6 +216,6 @@ class CategoryMain extends React.Component {
       </>
     );
   }
-}
+}  
 
-export default CategoryMain;
+export default  CategoryMain;

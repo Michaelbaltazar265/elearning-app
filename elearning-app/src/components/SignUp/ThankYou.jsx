@@ -2,10 +2,9 @@ import React from 'react';
 import info from './signInInfo';
 import { Link } from "react-router-dom";
 
+
 const ThankYou = (props) => { 
-//    function handleLogin(e){ 
-//     props.setView("Login")
-//     }
+
     return ( 
         <div className='container'>
             <div className='row'>
@@ -16,11 +15,16 @@ const ThankYou = (props) => {
                 }</h1>
                 <h3 className='text-center'>To login please click below</h3>
                 <Link to="/login">
-                <button className='btn btn-outline-success narbar-btn'>Login</button>
+                <button  className='btn btn-outline-success narbar-btn'>Login</button>
                 </Link>
             </div>
         </div>
     )
 }
 
-export default ThankYou;
+
+
+
+
+
+export default ( ThankYou);
