@@ -3,8 +3,6 @@ import React from 'react';
 import info from "./signInInfo";
 import { Link } from "react-router-dom"; 
 
-
-
 class SignUp extends React.Component {
     constructor(props) {
       super();
@@ -60,6 +58,7 @@ class SignUp extends React.Component {
     }
 
     buttonSubmitSignUp(){
+       
         this.setState({
             firstName: info.firstName,
             lastName: info.lastName,
@@ -74,7 +73,7 @@ class SignUp extends React.Component {
         
     }
 
-    render (){ 
+    render (props){ 
     return ( 
         <div className='container'>
             
@@ -141,8 +140,4 @@ class SignUp extends React.Component {
 }
 }
 
-
-
-
-
-export default SignUp;
+export default   SignUp;

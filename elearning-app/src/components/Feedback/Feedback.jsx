@@ -1,10 +1,14 @@
 import React from "react";
 import './feedback.css'
 import { UserAction } from "./../../Actions/index";
+import {StudAction} from "./../../Actions/index";
 import { connect } from "react-redux";
 
+  
+
 const FeedBack = (props) => {
-  console.log(props.ur);
+const renderUAct = () => props.UAct();
+renderUAct()
   return (
     <>
       <div className="container">
@@ -15,12 +19,9 @@ const FeedBack = (props) => {
           <div className="col-12 text-center">
             Read what are students have to say
           </div>
-          <button type="button" className='btn btn-success narbar-btn feeback-btn' onClick={props.UAct}>
-            Show Feedback
-          </button>
           <div className="row">
             {props.ur.map((val) => (
-              <div className="col-4">
+              <div key={val.id} className="col-4">
                 <div className="card">
                   <div className="card-header">{val.name}</div>
                   <div className="card-body">
@@ -37,9 +38,11 @@ const FeedBack = (props) => {
   );
 };
 
+
 const mapStateToProps = (state) => {
   return {
     ur: state.user,
+    sd:state.stud,
   };
 };
 
@@ -47,7 +50,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     UAct: () => {
       dispatch(UserAction);
-    },
+    }, 
+    SAct:()=>{dispatch(StudAction())}
   };
 };
 
