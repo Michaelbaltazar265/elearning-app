@@ -7,6 +7,7 @@ import React from 'react';
  import Login from './components/Login/Login';
  import CategoryMain from './components/Category/CategoryMain';
  import FeedBack from './components/Feedback/Feedback';
+ import MyClasses from './components/MyClasses/MyClasses';
 import './App.css';
 
 function App(props) {
@@ -21,6 +22,7 @@ function App(props) {
        <Route path='/login' component={Login}/>
       <Route path='/browser' component={CategoryMain}/>
        <Route path='/feedback' component={FeedBack}/>
+       <Route path='/my-classes' component={MyClasses} />
     </Switch> 
     </div> 
 </Router>
