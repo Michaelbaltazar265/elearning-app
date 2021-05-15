@@ -21,7 +21,6 @@ class CategoryMain extends React.Component {
 
   handleCateList = (e) => {
     const target = e.target.innerHTML;
-    console.log(target)
     this.setState({ view: target });
   };
 
@@ -113,7 +112,7 @@ class CategoryMain extends React.Component {
         <>
           <div className="row justify-content-start cat-page ">
             <div className="col-4 cat-page-col  ">
-              {/* <ListOfCategories/> */}
+              
               <ul className="ul-cat-list">
                 {this.state.categorieList.map((val) => (
                   <li

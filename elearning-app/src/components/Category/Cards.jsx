@@ -4,9 +4,11 @@ import reactCards from "./reactCards";
 import jsCards from "./jsCards";
 import htmlCards from "./htmlCards";
 import cssCards from "./cssCards";
+import myClassesArr from './../MyClasses/myClassesArr'
 
 /* Copy the map part    */
 const Cards = (props) => {
+
   if (props.view === "React") {
     return reactCards.map((react) => (
       <div key={react.num} className="col card-col">
@@ -29,10 +31,10 @@ const Cards = (props) => {
           <div className="card-body">
             <h5 className="card-title">{react.class}</h5>
             <p className="card-text">{` by ${react.description}`}</p>
-            <a
-              href="#//"
-              className="btn btn-outline-success"
-            >{`Price ${react.hours}`}</a>
+            <button  className="btn btn-outline-success" 
+              onClick={() =>myClassesArr.push(react)}> 
+            {`Price ${react.hours}`}
+            </button>
           </div>
         </div>
       </div>
@@ -59,10 +61,10 @@ const Cards = (props) => {
           <div className="card-body">
             <h5 className="card-title">{js.class}</h5>
             <p className="card-text">{` by ${js.description}`}</p>
-            <a
-              href="#//"
-              className="btn btn-outline-success"
-            >{`Price ${js.hours}`}</a>
+            <button  className="btn btn-outline-success"
+              onClick={() =>myClassesArr.push(js)} > 
+            {`Price ${js.hours}`}
+            </button>
           </div>
         </div>
       </div>
@@ -89,10 +91,10 @@ const Cards = (props) => {
           <div className="card-body">
             <h5 className="card-title">{h.class}</h5>
             <p className="card-text">{`by ${h.description}`}</p>
-            <a
-              href="#//"
-              className="btn btn-outline-success"
-            >{`Price ${h.hours}`}</a>
+            <button  className="btn btn-outline-success" 
+            onClick={() =>myClassesArr.push(h)}> 
+            {`Price ${h.hours}`}
+            </button>
           </div>
         </div>
       </div>
@@ -119,10 +121,10 @@ const Cards = (props) => {
           <div className="card-body">
             <h5 className="card-title">{c.class}</h5>
             <p className="card-text">{` by ${c.description}`}</p>
-            <a
-              href="#//"
-              className="btn btn-outline-success"
-            >{`Price ${c.hours}`}</a>
+            <button onClick={() => myClassesArr.push(c)}
+              className="btn btn-outline-success"> 
+            {`Price ${c.hours}`}
+            </button>
           </div>
         </div>
       </div>

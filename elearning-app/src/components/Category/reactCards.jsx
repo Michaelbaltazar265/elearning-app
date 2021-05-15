@@ -6,6 +6,7 @@ import image4 from './../../images/react-for.png';
 
 const reactCards = [
     {
+      type: "react",
       num: 1,
       image: image1,
       class: "React for Beginner",
@@ -14,6 +15,7 @@ const reactCards = [
       hours: "$25",
     },
     {
+      type: "react",
       num: 2,
       image: image2,
       class: "Create an App with Me",
@@ -22,6 +24,7 @@ const reactCards = [
         hours: "$25",
       },
     {
+      type: "react",
       num: 3,
       image: image3,
       class: "React.js and Redux",
@@ -30,6 +33,7 @@ const reactCards = [
         hours: "$25",
       },
     {
+      type: "react",
       num: 4,
       image: image4,
       class: "React JS - Learn by examples",

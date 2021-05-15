@@ -36,12 +36,18 @@ class Login extends React.Component {
     const inputEmail = this.state.inputEmail;
     const password = this.state.password;
     const inputPw = this.state.inputPw;
-  if (email === inputEmail){ 
-    console.log("right")
-  }
-  else if (inputEmail !== email) { 
+  if (email !== inputEmail){ 
     alert("Wrong email please try again")
-  }   
+  }
+  else if ( inputPw !== password && inputEmail === email){ 
+    console.log(" youre password is wrong but your email is correct, please try entering a new password");
+    alert (" youre password is wrong but your email is correct, please try entering a new password")
+  }  else if ( inputPw !== password && inputEmail !== email){ 
+    console.log(" youre password and email are both wrong. please try again")
+    alert(" youre password and email are both wrong. please try again")
+  }  else { 
+    alert("Thank you! You have successfully logged in")
+  }
   }
 
   

@@ -8,6 +8,7 @@ import image3 from './../../images/javascript.jpeg';
 
 const jsCards = [
     {
+      type: "js",
       num: 1,
       image: image1,
       class: "Beginners for JavaScript",
@@ -16,6 +17,7 @@ const jsCards = [
       hours: "$25",
     },
     {
+      type: "js",
       num: 2,
       image: image2,
       class: "Learn with me ",
@@ -24,6 +26,7 @@ const jsCards = [
         hours: "$25",
       },
     {
+      type: "js",
       num: 3,
       image: image3,
       class: "Learn JS A to Z",
@@ -32,6 +35,7 @@ const jsCards = [
         hours: "$25",
       },
     {
+      type: "js",
       num: 4,
       image: image4,
       class: "Learn Modern JavaScript ",
