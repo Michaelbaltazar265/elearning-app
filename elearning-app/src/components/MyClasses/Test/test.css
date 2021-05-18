@@ -8,8 +8,15 @@
 
   .image-text { 
     position: absolute;
-  bottom: 168px;
+  bottom: 180px;
   left: 230px;
+  }
+
+  .image-course { 
+
+    position: absolute;
+    bottom: 160px;
+    left: 250px;
   }
 
   .button-row { 

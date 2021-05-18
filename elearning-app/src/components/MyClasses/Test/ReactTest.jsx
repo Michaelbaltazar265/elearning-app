@@ -65,8 +65,7 @@ const ReactTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [answer, setAnswer]= useState([]);
-
+  
   const handleAnswerOptionClick = (isCorrect) => {  
     if (isCorrect) {
       setScore(score + 1);
@@ -101,13 +100,13 @@ const ReactTest = () => {
                 <div className="score-section">
                   You scored {score} out of {questions.length}
                 </div>
+                <p className='image-course'>React</p>
 
                 { 
                 
                     score >= questions.length -1 ?( 
                         <div className="image-container-test">
                         <img src={imageCongrats} alt="congrats" />
-                        {console.log(answer)}
                         <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
                       </div>
                     ) : ( 
