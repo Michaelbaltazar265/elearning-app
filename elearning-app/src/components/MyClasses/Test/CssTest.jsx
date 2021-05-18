@@ -1,42 +1,42 @@
 import React, {useState} from "react";
 
 const CssTest = (props) => { 
-console.log(props.type)
+
 const questions = [
     {
-        questionText: 'What is the capital of France?',
+        questionText: 'What does CSS stand for?',
         answerOptions: [
-            { answerText: 'New York', isCorrect: false },
-            { answerText: 'London', isCorrect: false },
-            { answerText: 'Paris', isCorrect: true },
-            { answerText: 'Dublin', isCorrect: false },
+            { answerText: 'Creative Style Sheets', isCorrect: false },
+            { answerText: 'Computer Style Sheets', isCorrect: false },
+            { answerText: 'Cascading Style Sheets', isCorrect: true },
+            { answerText: 'Colorful Style Sheets ', isCorrect: false },
         ],
     },
     {
-        questionText: 'Who is CEO of Tesla?',
+        questionText: 'Why Use CSS?',
         answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
-            { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
+            { answerText: 'To show content on the web pages', isCorrect: false },
+            { answerText: 'CSS is used to define styles for your web pages', isCorrect: true },
+            { answerText: 'To write code', isCorrect: false },
+            { answerText: 'To display a form', isCorrect: false },
         ],
     },
     {
-        questionText: 'The iPhone was created by which company?',
+        questionText: 'Linking your HTML and CSS files.',
         answerOptions: [
-            { answerText: 'Apple', isCorrect: true },
-            { answerText: 'Intel', isCorrect: false },
-            { answerText: 'Amazon', isCorrect: false },
-            { answerText: 'Microsoft', isCorrect: false },
+            { answerText: '<link href="file.css">', isCorrect: true },
+            { answerText: '<link hre="file.CSS">', isCorrect: false },
+            { answerText: '<link href="css">', isCorrect: false },
+            { answerText: '<link "css">', isCorrect: false },
         ],
     },
     {
-        questionText: 'How many Harry Potter books are there?',
+        questionText: 'What does this * mean on a CSS sheet? ',
         answerOptions: [
-            { answerText: '1', isCorrect: false },
-            { answerText: '4', isCorrect: false },
-            { answerText: '6', isCorrect: false },
-            { answerText: '7', isCorrect: true },
+            { answerText: 'For all H1 elements', isCorrect: false },
+            { answerText: 'For all <div> elements', isCorrect: false },
+            { answerText: 'To display nothing', isCorrect: false },
+            { answerText: 'Selects all elements', isCorrect: true },
         ],
     },
 ];

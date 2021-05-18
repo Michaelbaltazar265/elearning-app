@@ -1,0 +1,25 @@
+
+
+.image-container-test {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+
+  .image-text { 
+    position: absolute;
+  bottom: 168px;
+  left: 230px;
+  }
+
+  .button-row { 
+    padding: 15px;
+  }
+
+  .btn-myClasses { 
+    margin: 15px;
+  }
+  .col-4-my-classes { 
+    margin: 45px;
+    padding: 15px;
+  }

@@ -4,39 +4,39 @@ const JsTest = (props) => {
 console.log(props.type)
 const questions = [
     {
-        questionText: 'What is the capital of France?',
+        questionText: 'What must a variable begin with?',
         answerOptions: [
-            { answerText: 'New York', isCorrect: false },
-            { answerText: 'London', isCorrect: false },
-            { answerText: 'Paris', isCorrect: true },
-            { answerText: 'Dublin', isCorrect: false },
+            { answerText: 'HTML tag', isCorrect: false },
+            { answerText: 'CSS tag', isCorrect: false },
+            { answerText: 'A letter, $ or _', isCorrect: true },
+            { answerText: 'Nothing', isCorrect: false },
         ],
     },
     {
-        questionText: 'Who is CEO of Tesla?',
+        questionText: 'What is a variable?',
         answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
-            { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
+            { answerText: 'A loop', isCorrect: false },
+            { answerText: 'Container for a piece of data', isCorrect: true },
+            { answerText: 'Nothing', isCorrect: false },
+            { answerText: 'A file', isCorrect: false },
         ],
     },
     {
-        questionText: 'The iPhone was created by which company?',
+        questionText: 'How do you declare variables?',
         answerOptions: [
-            { answerText: 'Apple', isCorrect: true },
-            { answerText: 'Intel', isCorrect: false },
-            { answerText: 'Amazon', isCorrect: false },
-            { answerText: 'Microsoft', isCorrect: false },
+            { answerText: 'var, let and const keywords', isCorrect: true },
+            { answerText: 'variable', isCorrect: false },
+            { answerText: 'A = sign', isCorrect: false },
+            { answerText: 'A keyword', isCorrect: false },
         ],
     },
     {
-        questionText: 'How many Harry Potter books are there?',
+        questionText: 'DOM stands for?',
         answerOptions: [
-            { answerText: '1', isCorrect: false },
-            { answerText: '4', isCorrect: false },
-            { answerText: '6', isCorrect: false },
-            { answerText: '7', isCorrect: true },
+            { answerText: 'Document Out Matter', isCorrect: false },
+            { answerText: 'Document Outter Mammals', isCorrect: false },
+            { answerText: 'Document Other Meaning', isCorrect: false },
+            { answerText: 'Document Object Model', isCorrect: true },
         ],
     },
 ];
