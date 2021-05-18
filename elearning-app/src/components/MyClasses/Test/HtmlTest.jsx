@@ -4,39 +4,39 @@ const HtmlTest = (props) => {
 console.log(props.type)
 const questions = [
     {
-        questionText: 'What is the capital of France?',
+        questionText: 'What does HTML stand for?',
         answerOptions: [
-            { answerText: 'New York', isCorrect: false },
-            { answerText: 'London', isCorrect: false },
-            { answerText: 'Paris', isCorrect: true },
-            { answerText: 'Dublin', isCorrect: false },
+            { answerText: 'Human Text Mark Language', isCorrect: false },
+            { answerText: 'Hyper Language', isCorrect: false },
+            { answerText: 'Hyper Text Markup Language', isCorrect: true },
+            { answerText: 'Hands Talk Mask Long', isCorrect: false },
         ],
     },
     {
-        questionText: 'Who is CEO of Tesla?',
+        questionText: 'What does <!DOCTYPE html> mean?',
         answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
-            { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
+            { answerText: 'HTML tag', isCorrect: false },
+            { answerText: 'declaration defines this document to be HTML5', isCorrect: true },
+            { answerText: 'HTML4', isCorrect: false },
+            { answerText: 'declaration defines this HTML5', isCorrect: false },
         ],
     },
     {
-        questionText: 'The iPhone was created by which company?',
+        questionText: 'The <html> element is?',
         answerOptions: [
-            { answerText: 'Apple', isCorrect: true },
-            { answerText: 'Intel', isCorrect: false },
-            { answerText: 'Amazon', isCorrect: false },
-            { answerText: 'Microsoft', isCorrect: false },
+            { answerText: 'The root element of an HTML page', isCorrect: true },
+            { answerText: 'Title element', isCorrect: false },
+            { answerText: 'Opening element for a paragrapgh', isCorrect: false },
+            { answerText: 'declaration defines this HTML5', isCorrect: false },
         ],
     },
     {
-        questionText: 'How many Harry Potter books are there?',
+        questionText: '<h1> heading tags?',
         answerOptions: [
-            { answerText: '1', isCorrect: false },
-            { answerText: '4', isCorrect: false },
-            { answerText: '6', isCorrect: false },
-            { answerText: '7', isCorrect: true },
+            { answerText: 'A break in a parapgrapgh', isCorrect: false },
+            { answerText: 'A Heading image tag', isCorrect: false },
+            { answerText: 'A Form tag', isCorrect: false },
+            { answerText: 'Start from 1 to 6. But you can always adjust the size', isCorrect: true },
         ],
     },
 ];
