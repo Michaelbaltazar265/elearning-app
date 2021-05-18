@@ -6,6 +6,10 @@ import JsTest from "./Test/JsTest";
 import HtmlTest from "./Test/HtmlTest";
 import CssTest from "./Test/CssTest";
 import './Test/test.css';
+import ReactCourse from './Course/ReactCourse';
+import JsCourse from './Course/JsCourse';
+import HtmlCourse from './Course/HtmlCourse';
+import CssCourse from './Course/CssCourse';
 
 class MyClasses extends React.Component {
   constructor(props) {
@@ -13,9 +17,12 @@ class MyClasses extends React.Component {
     this.state = {
       classes: myClassesArr,
       type: "",
+      course: "",
+      courseType: "",
     };
 
     this.DeleteClasses = this.DeleteClasses.bind(this);
+    
   }
 
   /// removing the classes
@@ -24,11 +31,14 @@ class MyClasses extends React.Component {
     let list = this.state.classes;
     list.splice(index, 1);
     this.setState({ list });
-  }
+  } 
+ 
 
   render() {
     const classes = this.state.classes;
     const type = this.state.type;
+    const course = this.state.course;
+    
 
     if (type === "react") {
       return <ReactTest />;
@@ -38,6 +48,17 @@ class MyClasses extends React.Component {
       return <HtmlTest />;
     } else if (type === "css") {
       return <CssTest />;
+    } else if (course === "react"){ 
+      return < ReactCourse courseType={this.state.courseType} />
+    }
+    else if (course === "js"){ 
+      return < JsCourse courseType={this.state.courseType} />
+    }
+    else if (course === "html"){ 
+      return < HtmlCourse courseType={this.state.courseType} />
+    }
+    else if (course === "css"){ 
+      return < CssCourse courseType={this.state.courseType} />
     }
     return (
       <div className="container">
@@ -80,7 +101,7 @@ class MyClasses extends React.Component {
                   </div>
                   <div className='start-class'>
                     <br/>
-                    <button className="btn btn-info">Begin Course</button>
+                    <button onClick={() => this.setState({course: item.type, courseType:item.class})} className="btn btn-info">Begin Course</button>
                   </div>
                 </div>
               </div>
