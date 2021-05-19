@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import imageCongrats from "./../../../images/congrats.jpeg";
 import "./test.css";
 import info from "./../../SignUp/signInInfo";
+import testResult from './testResult'; 
 
 const HtmlTest = (props) => { 
 console.log(props.type)
@@ -9,37 +10,37 @@ const questions = [
     {
         questionText: 'What does HTML stand for?',
         answerOptions: [
-            { answerText: 'Human Text Mark Language', isCorrect: false },
-            { answerText: 'Hyper Language', isCorrect: false },
-            { answerText: 'Hyper Text Markup Language', isCorrect: true },
-            { answerText: 'Hands Talk Mask Long', isCorrect: false },
+            { answerText: 'Human Text Mark Language', isCorrect: false ,answerNum: 1},
+            { answerText: 'Hyper Language', isCorrect: false ,answerNum: 1 },
+            { answerText: 'Hyper Text Markup Language', isCorrect: true ,answerNum: 1 },
+            { answerText: 'Hands Talk Mask Long', isCorrect: false ,answerNum: 1 },
         ],
     },
     {
         questionText: 'What does <!DOCTYPE html> mean?',
         answerOptions: [
-            { answerText: 'HTML tag', isCorrect: false },
-            { answerText: 'declaration defines this document to be HTML5', isCorrect: true },
-            { answerText: 'HTML4', isCorrect: false },
-            { answerText: 'declaration defines this HTML5', isCorrect: false },
+            { answerText: 'HTML tag', isCorrect: false , answerNum: 2 },
+            { answerText: 'declaration defines this document to be HTML5', isCorrect: true  , answerNum: 2},
+            { answerText: 'HTML4', isCorrect: false , answerNum: 2 },
+            { answerText: 'declaration defines this HTML5', isCorrect: false  , answerNum: 2},
         ],
     },
     {
         questionText: 'The <html> element is?',
         answerOptions: [
-            { answerText: 'The root element of an HTML page', isCorrect: true },
-            { answerText: 'Title element', isCorrect: false },
-            { answerText: 'Opening element for a paragrapgh', isCorrect: false },
-            { answerText: 'declaration defines this HTML5', isCorrect: false },
+            { answerText: 'The root element of an HTML page', isCorrect: true, answerNum: 3 },
+            { answerText: 'Title element', isCorrect: false , answerNum: 3  },
+            { answerText: 'Opening element for a paragrapgh', isCorrect: false , answerNum: 3  },
+            { answerText: 'declaration defines this HTML5', isCorrect: false , answerNum: 3  },
         ],
     },
     {
         questionText: '<h1> heading tags?',
         answerOptions: [
-            { answerText: 'A break in a parapgrapgh', isCorrect: false },
-            { answerText: 'A Heading image tag', isCorrect: false },
-            { answerText: 'A Form tag', isCorrect: false },
-            { answerText: 'Start from 1 to 6. But you can always adjust the size', isCorrect: true },
+            { answerText: 'A break in a parapgrapgh', isCorrect: false , answerNum: 4  },
+            { answerText: 'A Heading image tag', isCorrect: false , answerNum: 4 },
+            { answerText: 'A Form tag', isCorrect: false  , answerNum: 4 },
+            { answerText: 'Start from 1 to 6. But you can always adjust the size', isCorrect: true , answerNum: 4  },
         ],
     },
 ];
@@ -47,6 +48,7 @@ const questions = [
 const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [view, setView] = useState("");
   
   const handleAnswerOptionClick = (isCorrect) => {  
     if (isCorrect) {
@@ -68,7 +70,13 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
       setCurrentQuestion(goBack);
     }
   };
+  const handleResult = () => { 
+    setView("result")
+  }
 
+  const percentage = (score/questions.length) * 100;
+  
+  
   return (
     <div className="container">
       <div className="row">
@@ -80,25 +88,49 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
             {showScore ? (
               <>
                 <div className="score-section">
-                  You scored {score} out of {questions.length}
+                  
+                  <button onClick={() => handleResult() } className="btn btn-primary">View Result</button>
                 </div>
-
                 { 
-                
-                    score >= questions.length -1 ?( 
-                        <div className="image-container-test">
-                        <img src={imageCongrats} alt="congrats" />
-                        <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
-                        <p className='image-course'>HTML</p>
-                      </div>
-                    ) : ( 
+                view === "result" ? ( 
+                  <>
+                  <div className='score-section'>
+                    You scored {score} out of {questions.length}
+                  </div>
+                  <div className='col-12'>
+                    {
+                      
+                      testResult.map((result) => ( 
+                       
+                   <p className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
+                  
 
-                        <div className='row'>
-                            <h4>Please try again later and remember to study</h4>
-                        </div>
-                    )
+                        
+                      
+                      ))
+                    }
+                  </div>
+                  <br/>
+                  <p>{ percentage + "%" }</p>
+                  <p className='false'>Anything in Red is wrong</p>
+
+                  {percentage >= 65 ?( 
+        <div className="image-container-test">
+        <img src={imageCongrats} alt="congrats" />
+        <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
+        <p className='image-course'>HTML</p>
+      </div>
+    ) : ( 
+         
+        <div className='row'>
+            <h4>Please try again later and remember to study</h4>
+        </div>
+    ) 
+}
+
+                  </>
+                ): false
                 }
-               
               </>
             ) : (
               <>
@@ -118,14 +150,18 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
                         key={questions.id}
                         value={answerOption.isCorrect}
                         onClick={(currentanswer) => {
+                          testResult.push(answerOption);
                           handleAnswerOptionClick(answerOption.isCorrect, answerOption);
                         }}
                       >
                         {answerOption.answerText}
                       </button>
-                    )
+
+                    ) 
                   )}
-                </div>
+                </div> 
+
+
 
                 {currentQuestion > 0 ? (
                   <div className="return">
@@ -137,7 +173,7 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
                   false
                 )}
               </>
-            )}
+            )} 
           </div>
         </div>
       </div>
@@ -145,4 +181,4 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
   );
 };
 
-export default HtmlTest;
+export default HtmlTest; 

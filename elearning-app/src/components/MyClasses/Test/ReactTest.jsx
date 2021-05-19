@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import imageCongrats from "./../../../images/congrats.jpeg";
 import "./test.css";
 import info from "./../../SignUp/signInInfo";
+import testResult from './testResult'; 
 
 const ReactTest = () => {
   const questions = [
@@ -10,14 +11,15 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is Babel and what does it do?",
       answerOptions: [
-        { answerText: "It has nothing to do with React", isCorrect: false },
-        { answerText: "Its a Song", isCorrect: false },
+        { answerText: "It has nothing to do with React", isCorrect: false ,answerNum: 1 },
+        { answerText: "Its a Song", isCorrect: false ,answerNum: 1 },
         {
           answerText:
             "Babel is a great tool for transpiling our React code (which is JSX) and our ES6 code at the same time.",
           isCorrect: true,
+          answerNum: 1,
         },
-        { answerText: "Its state", isCorrect: false },
+        { answerText: "Its state", isCorrect: false ,answerNum: 1 },
       ],
     },
     {
@@ -25,14 +27,15 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is package.JSON?",
       answerOptions: [
-        { answerText: "React file", isCorrect: false },
+        { answerText: "React file", isCorrect: false , answerNum: 2 },
         {
           answerText:
             "It outlines all the dependencies a project needs to run.",
           isCorrect: true,
+           answerNum: 2
         },
-        { answerText: "Call an API", isCorrect: false },
-        { answerText: "Main file for your project", isCorrect: false },
+        { answerText: "Call an API", isCorrect: false , answerNum: 2 },
+        { answerText: "Main file for your project", isCorrect: false , answerNum: 2 },
       ],
     },
     {
@@ -40,10 +43,10 @@ const ReactTest = () => {
       answer: [],
       questionText: "Everything in React is a ______?",
       answerOptions: [
-        { answerText: "Component", isCorrect: true },
-        { answerText: "Package", isCorrect: false },
-        { answerText: "Class", isCorrect: false },
-        { answerText: "Module", isCorrect: false },
+        { answerText: "Component", isCorrect: true , answerNum: 3  },
+        { answerText: "Package", isCorrect: false , answerNum: 3  },
+        { answerText: "Class", isCorrect: false , answerNum: 3  },
+        { answerText: "Module", isCorrect: false  , answerNum: 3 },
       ],
     },
     {
@@ -51,12 +54,13 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is state in React?",
       answerOptions: [
-        { answerText: "A persistant storage", isCorrect: false },
-        { answerText: "Nothing", isCorrect: false },
-        { answerText: "A call back", isCorrect: false },
+        { answerText: "A persistant storage", isCorrect: false , answerNum: 4  },
+        { answerText: "Nothing", isCorrect: false , answerNum: 4  },
+        { answerText: "A call back", isCorrect: false , answerNum: 4  },
         {
           answerText: "An internal data store (object) of a component",
           isCorrect: true,
+           answerNum: 4 
         },
       ],
     },
@@ -65,6 +69,7 @@ const ReactTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [view, setView] = useState("");
   
   const handleAnswerOptionClick = (isCorrect) => {  
     if (isCorrect) {
@@ -86,7 +91,13 @@ const ReactTest = () => {
       setCurrentQuestion(goBack);
     }
   };
+  const handleResult = () => { 
+    setView("result")
+  }
 
+  const percentage = (score/questions.length) * 100;
+  console.log(percentage)
+  
   return (
     <div className="container">
       <div className="row">
@@ -98,25 +109,49 @@ const ReactTest = () => {
             {showScore ? (
               <>
                 <div className="score-section">
-                  You scored {score} out of {questions.length}
+                  
+                  <button onClick={() => handleResult() } className="btn btn-primary">View Result</button>
                 </div>
-                <p className='image-course'>React</p>
-
                 { 
-                
-                    score >= questions.length -1 ?( 
-                        <div className="image-container-test">
-                        <img src={imageCongrats} alt="congrats" />
-                        <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
-                      </div>
-                    ) : ( 
+                view === "result" ? ( 
+                  <>
+                  <div className='score-section'>
+                    You scored {score} out of {questions.length}
+                  </div>
+                  <div className='col-12'>
+                    {
+                      
+                      testResult.map((result) => ( 
+                       
+                   <p className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
+                  
 
-                        <div className='row'>
-                            <h4>Please try again later and remember to study</h4>
-                        </div>
-                    )
+                        
+                      
+                      ))
+                    }
+                  </div>
+                  <br/>
+                  <p>{ percentage + "%" }</p>
+                  <p className='false'>Anything in Red is wrong</p>
+
+                  {percentage >= 65 ?( 
+        <div className="image-container-test">
+        <img src={imageCongrats} alt="congrats" />
+        <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
+        <p className='image-course'>React</p>
+      </div>
+    ) : ( 
+         
+        <div className='row'>
+            <h4>Please try again later and remember to study</h4>
+        </div>
+    ) 
+}
+
+                  </>
+                ): false
                 }
-               
               </>
             ) : (
               <>
@@ -136,14 +171,18 @@ const ReactTest = () => {
                         key={questions.id}
                         value={answerOption.isCorrect}
                         onClick={(currentanswer) => {
+                          testResult.push(answerOption);
                           handleAnswerOptionClick(answerOption.isCorrect, answerOption);
                         }}
                       >
                         {answerOption.answerText}
                       </button>
-                    )
+
+                    ) 
                   )}
-                </div>
+                </div> 
+
+
 
                 {currentQuestion > 0 ? (
                   <div className="return">
@@ -155,7 +194,7 @@ const ReactTest = () => {
                   false
                 )}
               </>
-            )}
+            )} 
           </div>
         </div>
       </div>
@@ -163,4 +202,4 @@ const ReactTest = () => {
   );
 };
 
-export default ReactTest;
+export default ReactTest; 
