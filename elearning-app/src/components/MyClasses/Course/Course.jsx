@@ -20,9 +20,7 @@ const Course = (props) => {
           title="HTML Course"
             width="620"
             height="345"
-
             src={props.video}
-            // "https://www.youtube.com/embed/pQN-pnXPaVg"
           />
         </div>
       </div>

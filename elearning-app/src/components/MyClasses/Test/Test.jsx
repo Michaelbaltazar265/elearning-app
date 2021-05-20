@@ -4,48 +4,10 @@ import "./test.css";
 import info from "./../../SignUp/signInInfo";
 import testResult from './testResult'; 
 
-const JsTest = (props) => { 
+const Test = (props) => {
 
-const questions = [
-    {
-        questionText: 'What must a variable begin with?',
-        answerOptions: [
-            { answerText: 'HTML tag', isCorrect: false ,answerNum: 1 },
-            { answerText: 'CSS tag', isCorrect: false,answerNum: 1 },
-            { answerText: 'A letter, $ or _', isCorrect: true ,answerNum: 1},
-            { answerText: 'Nothing', isCorrect: false,answerNum: 1 },
-        ],
-    },
-    {
-        questionText: 'What is a variable?',
-        answerOptions: [
-            { answerText: 'A loop', isCorrect: false , answerNum: 2 },
-            { answerText: 'Container for a piece of data', isCorrect: true  , answerNum: 2},
-            { answerText: 'Nothing', isCorrect: false , answerNum: 2 },
-            { answerText: 'A file', isCorrect: false , answerNum: 2 },
-        ],
-    },
-    {
-        questionText: 'How do you declare variables?',
-        answerOptions: [
-            { answerText: 'var, let and const keywords', isCorrect: true , answerNum: 3  },
-            { answerText: 'variable', isCorrect: false , answerNum: 3  },
-            { answerText: 'A = sign', isCorrect: false , answerNum: 3  },
-            { answerText: 'A keyword', isCorrect: false , answerNum: 3  },
-        ],
-    },
-    {
-        questionText: 'DOM stands for?',
-        answerOptions: [
-            { answerText: 'Document Out Matter', isCorrect: false , answerNum: 4  },
-            { answerText: 'Document Outter Mammals', isCorrect: false , answerNum: 4 },
-            { answerText: 'Document Other Meaning', isCorrect: false , answerNum: 4  },
-            { answerText: 'Document Object Model', isCorrect: true , answerNum: 4  },
-        ],
-    },
-];
 
-const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [view, setView] = useState("");
@@ -56,7 +18,7 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < props.questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
@@ -74,13 +36,13 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
     setView("result")
   }
 
-  const percentage = (score/questions.length) * 100;
+  const percentage = (score/props.questions.length) * 100;
   
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1>JavaScript Test</h1>
+          <h1>{`${props.name} Test`}</h1>
         </div>
         <div className="col-12">
           <div className="app">
@@ -94,14 +56,14 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
                 view === "result" ? ( 
                   <>
                   <div className='score-section'>
-                    You scored {score} out of {questions.length}
+                    You scored {score} out of {props.questions.length}
                   </div>
                   <div className='col-12'>
                     {
                       
                       testResult.map((result) => ( 
                        
-                   <p className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
+                   <p key={result.answerNum} className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
                   
 
                         
@@ -117,7 +79,7 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
         <div className="image-container-test">
         <img src={imageCongrats} alt="congrats" />
         <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
-        <p className='image-course'>JavaScript</p>
+        <p className='image-course'>{`${props.name}`}</p> 
       </div>
     ) : ( 
          
@@ -136,17 +98,17 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
                 <div className="question-section">
                   <div className="question-count">
                     <span>Question {currentQuestion + 1}</span>/
-                    {questions.length}
+                    {props.questions.length}
                   </div>
                   <div className="question-text">
-                    {questions[currentQuestion].questionText}
+                    {props.questions[currentQuestion].questionText}
                   </div>
                 </div>
                 <div className="answer-section">
-                  {questions[currentQuestion].answerOptions.map(
+                  {props.questions[currentQuestion].answerOptions.map(
                     (answerOption) => (
                       <button
-                        key={questions.id}
+                        key={answerOption.id}
                         value={answerOption.isCorrect}
                         onClick={(currentanswer) => {
                           testResult.push(answerOption);
@@ -180,4 +142,4 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
   );
 };
 
-export default JsTest; 
+export default Test; 
