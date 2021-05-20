@@ -1,12 +1,13 @@
 import React from "react";
 import myClassesArr from "./myClassesArr";
-// import Test from "./Test";
-import ReactTest from "./Test/ReactTest";
-import JsTest from "./Test/JsTest";
-import HtmlTest from "./Test/HtmlTest";
-import CssTest from "./Test/CssTest";
 import './Test/test.css';
 import Course from './Course/Course';
+import Test from './Test/Test';
+import Reactquestions from './Test/Reactquestions';
+import Jsquestions from './Test/Jsquestions';
+import Htmlquestions from "./Test/Htmlquestions";
+import Cssquestions from './Test/Cssquestions';
+
 
 
 
@@ -40,16 +41,14 @@ class MyClasses extends React.Component {
     
 
     if (type === "react") {
-      return <ReactTest />;
+      return <Test name="React" questions={Reactquestions} />;
     } else if (type === "js") {
-      return <JsTest />;
+      return <Test name='JavaScript' questions={Jsquestions} />;
     } else if (type === "html") {
-      return <HtmlTest />;
+      return <Test name='HTML' questions={Htmlquestions} />;
     } else if (type === "css") {
-      return <CssTest />;
+      return <Test name='CSS' questions={Cssquestions} />;
     } else if (course === "react"){ 
-
-
       return < Course courseType={this.state.courseType} name="React" video="https://www.youtube.com/embed/w7ejDZ8SWv8" />
     }
     else if (course === "js"){ 
