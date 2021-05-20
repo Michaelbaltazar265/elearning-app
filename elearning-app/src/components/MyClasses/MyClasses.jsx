@@ -6,10 +6,9 @@ import JsTest from "./Test/JsTest";
 import HtmlTest from "./Test/HtmlTest";
 import CssTest from "./Test/CssTest";
 import './Test/test.css';
-import ReactCourse from './Course/ReactCourse';
-import JsCourse from './Course/JsCourse';
-import HtmlCourse from './Course/HtmlCourse';
-import CssCourse from './Course/CssCourse';
+import Course from './Course/Course';
+
+
 
 class MyClasses extends React.Component {
   constructor(props) {
@@ -49,16 +48,18 @@ class MyClasses extends React.Component {
     } else if (type === "css") {
       return <CssTest />;
     } else if (course === "react"){ 
-      return < ReactCourse courseType={this.state.courseType} />
+
+
+      return < Course courseType={this.state.courseType} name="React" video="https://www.youtube.com/embed/w7ejDZ8SWv8" />
     }
     else if (course === "js"){ 
-      return < JsCourse courseType={this.state.courseType} />
+      return < Course courseType={this.state.courseType} name='JavaScript' video="https://www.youtube.com/embed/Qqx_wzMmFeA" />
     }
     else if (course === "html"){ 
-      return < HtmlCourse courseType={this.state.courseType} />
+      return < Course courseType={this.state.courseType} name='HTML' video="https://www.youtube.com/embed/pQN-pnXPaVg" />
     }
     else if (course === "css"){ 
-      return < CssCourse courseType={this.state.courseType} />
+      return < Course courseType={this.state.courseType} name="CSS" video="https://www.youtube.com/embed/1Rs2ND1ryYc" />
     }
     return (
       <div className="container">

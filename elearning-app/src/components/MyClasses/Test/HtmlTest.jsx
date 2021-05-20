@@ -5,7 +5,7 @@ import info from "./../../SignUp/signInInfo";
 import testResult from './testResult'; 
 
 const HtmlTest = (props) => { 
-console.log(props.type)
+
 const questions = [
     {
         questionText: 'What does HTML stand for?',
