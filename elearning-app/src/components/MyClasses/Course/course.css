@@ -34,4 +34,12 @@
     margin-top: 25px;
   }
 
+
+  .line { 
+
+padding: 15px;
+    border-bottom: 5px solid;
+    border-bottom-color: #5cb85c;
+  }
+
   

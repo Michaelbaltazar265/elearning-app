@@ -79,7 +79,6 @@ const [currentQuestion, setCurrentQuestion] = useState(0);
   }
 
   const percentage = (score/questions.length) * 100;
-  console.log(percentage)
   
   return (
     <div className="container">

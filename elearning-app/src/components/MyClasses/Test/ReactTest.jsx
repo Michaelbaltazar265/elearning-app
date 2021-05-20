@@ -11,15 +11,15 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is Babel and what does it do?",
       answerOptions: [
-        { answerText: "It has nothing to do with React", isCorrect: false ,answerNum: 1 },
-        { answerText: "Its a Song", isCorrect: false ,answerNum: 1 },
+        { answerText: "It has nothing to do with React", isCorrect: false ,answerNum: 10 },
+        { answerText: "Its a Song", isCorrect: false ,answerNum: 10 },
         {
           answerText:
             "Babel is a great tool for transpiling our React code (which is JSX) and our ES6 code at the same time.",
           isCorrect: true,
-          answerNum: 1,
+          answerNum: 10,
         },
-        { answerText: "Its state", isCorrect: false ,answerNum: 1 },
+        { answerText: "Its state", isCorrect: false ,answerNum: 10 },
       ],
     },
     {
@@ -27,15 +27,15 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is package.JSON?",
       answerOptions: [
-        { answerText: "React file", isCorrect: false , answerNum: 2 },
+        { answerText: "React file", isCorrect: false , answerNum: 20 },
         {
           answerText:
             "It outlines all the dependencies a project needs to run.",
           isCorrect: true,
-           answerNum: 2
+           answerNum: 20
         },
-        { answerText: "Call an API", isCorrect: false , answerNum: 2 },
-        { answerText: "Main file for your project", isCorrect: false , answerNum: 2 },
+        { answerText: "Call an API", isCorrect: false , answerNum: 20 },
+        { answerText: "Main file for your project", isCorrect: false , answerNum: 20 },
       ],
     },
     {
@@ -43,10 +43,10 @@ const ReactTest = () => {
       answer: [],
       questionText: "Everything in React is a ______?",
       answerOptions: [
-        { answerText: "Component", isCorrect: true , answerNum: 3  },
-        { answerText: "Package", isCorrect: false , answerNum: 3  },
-        { answerText: "Class", isCorrect: false , answerNum: 3  },
-        { answerText: "Module", isCorrect: false  , answerNum: 3 },
+        { answerText: "Component", isCorrect: true , answerNum: 30  },
+        { answerText: "Package", isCorrect: false , answerNum: 30  },
+        { answerText: "Class", isCorrect: false , answerNum: 30  },
+        { answerText: "Module", isCorrect: false  , answerNum: 30 },
       ],
     },
     {
@@ -54,13 +54,13 @@ const ReactTest = () => {
       answer: [],
       questionText: "What is state in React?",
       answerOptions: [
-        { answerText: "A persistant storage", isCorrect: false , answerNum: 4  },
-        { answerText: "Nothing", isCorrect: false , answerNum: 4  },
-        { answerText: "A call back", isCorrect: false , answerNum: 4  },
+        { answerText: "A persistant storage", isCorrect: false , answerNum: 40  },
+        { answerText: "Nothing", isCorrect: false , answerNum: 40  },
+        { answerText: "A call back", isCorrect: false , answerNum: 40  },
         {
           answerText: "An internal data store (object) of a component",
           isCorrect: true,
-           answerNum: 4 
+           answerNum: 40 
         },
       ],
     },
@@ -96,7 +96,6 @@ const ReactTest = () => {
   }
 
   const percentage = (score/questions.length) * 100;
-  console.log(percentage)
   
   return (
     <div className="container">
@@ -123,7 +122,7 @@ const ReactTest = () => {
                       
                       testResult.map((result) => ( 
                        
-                   <p className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
+                   <p key={result.answerNum} className={result.isCorrect.toString()}> {`${result.answerNum}. ${result.answerText}`} </p>
                   
 
                         
@@ -139,7 +138,7 @@ const ReactTest = () => {
         <div className="image-container-test">
         <img src={imageCongrats} alt="congrats" />
         <p className="image-text">{`${info.firstName} ${info.lastName}`}</p>
-        <p className='image-course'>React</p>
+        <p className='image-course'>React</p> 
       </div>
     ) : ( 
          
@@ -168,7 +167,7 @@ const ReactTest = () => {
                   {questions[currentQuestion].answerOptions.map(
                     (answerOption) => (
                       <button
-                        key={questions.id}
+                        key={answerOption.id}
                         value={answerOption.isCorrect}
                         onClick={(currentanswer) => {
                           testResult.push(answerOption);

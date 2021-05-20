@@ -5,7 +5,7 @@ import info from "./../../SignUp/signInInfo";
 import testResult from './testResult'; 
 
 const JsTest = (props) => { 
-console.log(props.type)
+
 const questions = [
     {
         questionText: 'What must a variable begin with?',
