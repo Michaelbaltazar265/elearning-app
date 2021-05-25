@@ -3,7 +3,7 @@ import info from "./../SignUp/signInInfo";
 import { Link } from "react-router-dom";
 import "./login.css";
 import yellow from './../../images/yellow-tape.jpg'
-// import WrongInput from './WrongInput'; 
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -12,13 +12,16 @@ class Login extends React.Component {
       email: info.email,
       password: info.password,
       inputEmail: "", 
-      inputPw: ""
+      inputPw: "",
+      emailAndPw: false
     };
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePW = this.handleChangePW.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
- 
+
+  
+
   handleChangeEmail = (e)=> { 
     this.setState({ 
       inputEmail: e.target.value, 
@@ -29,7 +32,7 @@ class Login extends React.Component {
       inputPw: e.target.value, 
     });
   }
-
+  
   handleSubmit = (e)=> { 
     e.preventDefault();  
     const email = this.state.email; 
@@ -40,19 +43,34 @@ class Login extends React.Component {
     alert("Wrong email please try again")
   }
   else if ( inputPw !== password && inputEmail === email){ 
-    console.log(" youre password is wrong but your email is correct, please try entering a new password");
-    alert (" youre password is wrong but your email is correct, please try entering a new password")
+    alert ("Your password is wrong but your email is correct, please try entering a new password")
   }  else if ( inputPw !== password && inputEmail !== email){ 
-    console.log(" youre password and email are both wrong. please try again")
-    alert(" youre password and email are both wrong. please try again")
+    alert(" Your password and email are both wrong. please try again")
   }  else { 
-    alert("Thank you! You have successfully logged in")
+    this.setState({emailAndPw: true})
+    info.login = true;
+      alert("Thank you! You have successfully logged in")
   }
   }
 
   
 
   render() {
+   
+    if (this.state.emailAndPw === true){ 
+      return ( 
+        <div className='container'>
+          <div className='row logged-in'>
+           <h3>
+           {` Thank you for logging in ${info.firstName} ${info.lastName} `}
+           </h3>
+          </div>
+          
+          <button>Check out classes</button>
+        </div>
+      )
+    }
+    
     if (this.state.email === "" && this.state.password === "") {
         
       return (
@@ -102,7 +120,13 @@ class Login extends React.Component {
                 />
               </div>
               <div className="row">
-                <button onSubmit={this.handleSubmit} className="btn btn-success narbar-btn">Submit</button>
+                
+              
+             
+              
+              <button onSubmit={this.handleSubmit} className="btn btn-success narbar-btn">Submit</button>
+               
+               
               </div>
             </div>
           </form>

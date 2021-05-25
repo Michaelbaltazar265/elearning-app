@@ -7,7 +7,8 @@ const info = {
     address2: '',
     city: '', 
     state: "", 
-    zip: 0
+    zip: 0,
+    login: false,
 };
 
 

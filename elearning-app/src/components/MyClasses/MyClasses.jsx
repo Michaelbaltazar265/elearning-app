@@ -7,6 +7,7 @@ import Reactquestions from './Test/Reactquestions';
 import Jsquestions from './Test/Jsquestions';
 import Htmlquestions from "./Test/Htmlquestions";
 import Cssquestions from './Test/Cssquestions';
+import info from './../SignUp/signInInfo';
 
 
 
@@ -19,6 +20,7 @@ class MyClasses extends React.Component {
       type: "",
       course: "",
       courseType: "",
+      login: info.login,
     };
 
     this.DeleteClasses = this.DeleteClasses.bind(this);

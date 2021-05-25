@@ -8,6 +8,7 @@ import imageHtml from "./../../images/html-page.jpg";
 import "./cards.css";
 import image from "./../../images/learn-html-and-css-copy.png";
 import { Link } from "react-router-dom";
+import info from './../SignUp/signInInfo';
 
 class CategoryMain extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class CategoryMain extends React.Component {
     this.state = {
       categorieList: ["React", "JavaScript", "HTML", "CSS"],
       view: "main",
+      login: info.login,
     };
     this.handleCateList = this.handleCateList.bind(this);
   }
@@ -26,7 +28,6 @@ class CategoryMain extends React.Component {
 
   render(props) {
     const view = this.state.view;
-
     if (this.state.view === "main") {
     } else if (view === "React") {
       return (
