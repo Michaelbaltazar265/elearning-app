@@ -61,12 +61,20 @@ class Login extends React.Component {
       return ( 
         <div className='container'>
           <div className='row logged-in'>
-           <h3>
+          <div className='col'>
+          <h3>
            {` Thank you for logging in ${info.firstName} ${info.lastName} `}
            </h3>
           </div>
-          
-          <button>Check out classes</button>
+          </div>
+
+         <button
+                type="button"
+                className="btn btn-success narbar-btn log-in-btn login"
+              >
+                {" "}
+                View Classes
+              </button>
         </div>
       )
     }
