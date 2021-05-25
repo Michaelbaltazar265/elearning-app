@@ -4,7 +4,8 @@ import "./nav.css";
 // import info from './../components/SignUp/signInInfo';
 
 
-function Nav(props) {
+function Nav(props) { 
+
 
   return (
     <>
@@ -27,6 +28,7 @@ function Nav(props) {
                 <li className="nav-item">Browser</li>
               </Link>
             </ul>
+            <p>Hi Michael</p>
             <Link to="/login" className='nav-links-2'>
               <button
                 type="button"

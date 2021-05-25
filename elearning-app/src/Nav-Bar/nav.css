@@ -68,3 +68,7 @@ ul li Link:hover::after {
   text-align: center;
   display: block;
 }
+
+.say-hi { 
+  padding: 25px;
+}

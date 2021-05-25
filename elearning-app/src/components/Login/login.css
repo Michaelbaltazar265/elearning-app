@@ -37,3 +37,7 @@
 .wrong-input { 
   color: red;
 }
+
+.logged-in { 
+  padding: 25px;
+}
