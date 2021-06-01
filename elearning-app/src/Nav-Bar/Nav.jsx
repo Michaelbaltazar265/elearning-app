@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
-// import info from './../components/SignUp/signInInfo';
+//import info from './../components/SignUp/signInInfo';
 
 
 function Nav(props) { 
+// const success = info.firstName ? info.firstName : false;
+// const success = (login)=> { 
+//   // if (login === true){ 
+//   //   return info.
+//   // }
 
+// }
 
   return (
     <>
@@ -28,7 +34,7 @@ function Nav(props) {
                 <li className="nav-item">Browser</li>
               </Link>
             </ul>
-            <p>Hi Michael</p>
+                {/* <p>{`Hi ${success}`}</p> */}
             <Link to="/login" className='nav-links-2'>
               <button
                 type="button"
