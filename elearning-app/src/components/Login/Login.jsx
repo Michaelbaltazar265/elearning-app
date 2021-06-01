@@ -2,8 +2,7 @@ import React from "react";
 import info from "./../SignUp/signInInfo";
 import { Link } from "react-router-dom";
 import "./login.css";
-import yellow from './../../images/yellow-tape.jpg'
-
+import yellow from "./../../images/yellow-tape.jpg";
 
 class Login extends React.Component {
   constructor(props) {
@@ -11,81 +10,77 @@ class Login extends React.Component {
     this.state = {
       email: info.email,
       password: info.password,
-      inputEmail: "", 
+      inputEmail: "",
       inputPw: "",
-      emailAndPw: false
+      emailAndPw: false,
     };
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePW = this.handleChangePW.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
+  handleChangeEmail = (e) => {
+    this.setState({
+      inputEmail: e.target.value,
+    });
+  };
+  handleChangePW = (e) => {
+    this.setState({
+      inputPw: e.target.value,
+    });
+  };
 
-  handleChangeEmail = (e)=> { 
-    this.setState({ 
-      inputEmail: e.target.value, 
-    });
-  }
-  handleChangePW = (e)=> { 
-    this.setState({ 
-      inputPw: e.target.value, 
-    });
-  }
-  
-  handleSubmit = (e)=> { 
-    e.preventDefault();  
-    const email = this.state.email; 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const email = this.state.email;
     const inputEmail = this.state.inputEmail;
     const password = this.state.password;
     const inputPw = this.state.inputPw;
-  if (email !== inputEmail){ 
-    alert("Wrong email please try again")
-  }
-  else if ( inputPw !== password && inputEmail === email){ 
-    alert ("Your password is wrong but your email is correct, please try entering a new password")
-  }  else if ( inputPw !== password && inputEmail !== email){ 
-    alert(" Your password and email are both wrong. please try again")
-  }  else { 
-    this.setState({emailAndPw: true})
-    info.login = true;
-      alert("Thank you! You have successfully logged in")
-  }
-  }
-
-  
+    if (email !== inputEmail) {
+      alert("Wrong email please try again");
+    } else if (inputPw !== password && inputEmail === email) {
+      alert(
+        "Your password is wrong but your email is correct, please try entering a new password"
+      );
+    } else if (inputPw !== password && inputEmail !== email) {
+      alert(" Your password and email are both wrong. please try again");
+    } else {
+      this.setState({ emailAndPw: true });
+      info.login = true;
+      alert("Thank you! You have successfully logged in");
+    }
+  };
 
   render() {
-   
-    if (this.state.emailAndPw === true){ 
-      return ( 
-        <div className='container'>
-          <div className='row logged-in'>
-          <div className='col'>
-          <h3>
-           {` Thank you for logging in ${info.firstName} ${info.lastName} `}
-           </h3>
-          </div>
-          </div>
+    if (this.state.emailAndPw === true) {
+      return (
+        <div className="container">
+          <div className="row logged-in">
+            <div className="col-12">
+              <h3>
+                {` Thank you for logging in ${info.firstName} ${info.lastName} `}
+              </h3>
+            </div>
 
-         <button
-                type="button"
-                className="btn btn-success narbar-btn log-in-btn login"
-              >
-                {" "}
-                View Classes
-              </button>
+            <div className="col-12">
+              <Link     to="/browser" >
+                <button type="button" className="btn btn-success">
+                  {" "}
+                  View Classes
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
-      )
+      );
     }
-    
+
     if (this.state.email === "" && this.state.password === "") {
-        
       return (
         <div className="container">
           <section>
-            <img src={yellow} alt="yellow" className='yellow-tape'/>
-            <h1 className='text-login'>
+            <img src={yellow} alt="yellow" className="yellow-tape" />
+            <h1 className="text-login">
               We do not have your information at this time can you please sign
               up
             </h1>
@@ -95,7 +90,6 @@ class Login extends React.Component {
           </section>
         </div>
       );
-      
     }
 
     return (
@@ -108,7 +102,7 @@ class Login extends React.Component {
               </div>
               <div className="form-group">
                 <label for="inputFirstName">Email</label>
-                
+
                 <input
                   onChange={this.handleChangeEmail}
                   type="text"
@@ -117,9 +111,8 @@ class Login extends React.Component {
                 />
               </div>
               <div className="form-group">
-             
                 <label for="inputLastName">Password</label>
-              
+
                 <input
                   onChange={this.handleChangePW}
                   type="text"
@@ -128,13 +121,12 @@ class Login extends React.Component {
                 />
               </div>
               <div className="row">
-                
-              
-             
-              
-              <button onSubmit={this.handleSubmit} className="btn btn-success narbar-btn">Submit</button>
-               
-               
+                <button
+                  onSubmit={this.handleSubmit}
+                  className="btn btn-success narbar-btn"
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </form>
