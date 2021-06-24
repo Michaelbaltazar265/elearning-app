@@ -1,17 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
-//import info from './../components/SignUp/signInInfo';
 
 
 function Nav(props) { 
-// const success = info.firstName ? info.firstName : false;
-// const success = (login)=> { 
-//   // if (login === true){ 
-//   //   return info.
-//   // }
 
-// }
 
   return (
     <>
